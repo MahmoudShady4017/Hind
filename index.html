@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my litter Queen</title>
+    <style>
+        body {
+            background-color: #111; /* الخلفية الداكنة */
+            color: white; /* لون النص */
+            font-family: Arial, sans-serif; /* نوع الخط */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* تعبئة الشاشة بالكامل */
+            margin: 0;
+        }
+
+        #name {
+            font-size: 36px;
+            transition: color 0.5s ease-in-out;
+            color: rgb(10, 158, 232);
+            position: relative;
+            left: 60px;
+        }
+
+        #description {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="name">Hind
+        </div>
+        <div id="description"> 👑 Queen of the world 👑</div>
+    </div>
+
+    <script>
+        const nameElement = document.getElementById("name");
+
+        // قائمة بالأسماء والألوان التي ترغب في عرضها
+        const data = [
+            { name: " Hind ", color: "bink" },
+            { name: " Hind ", color: "red" },
+            { name: " Hind ", color: "blue" },
+        ];
+
+        let currentIndex = 0;
+
+        // تحديث الاسم ولونه تلقائياً كل 2 ثانية
+        function updateNameAndColor() {
+            nameElement.textContent = data[currentIndex].name;
+            nameElement.style.color = data[currentIndex].color;
+            currentIndex = (currentIndex + 1) % data.length;
+        }
+
+        setInterval(updateNameAndColor, 1000); // يتغير الاسم واللون كل ثانيتين (2000 مللي ثانية)
+    </script>
+</body>
+</html>
